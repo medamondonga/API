@@ -20,6 +20,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", include("dj_rest_auth.urls")),
     path("api/blog/", include("blog.urls"), name="blog")
 ]
 
+#P@ul0000
