@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini Blog Frontend</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800 p-6">
-  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow">
-    <h1 class="text-2xl font-bold mb-4">Login</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Blog Frontend</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800 p-6">
+    <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow">
+      <!--<h1 class="text-2xl font-bold mb-4">Login</h1>
     <input id="username" type="text" placeholder="Username" class="w-full mb-2 px-3 py-2 border rounded">
     <input id="password" type="password" placeholder="Password" class="w-full mb-4 px-3 py-2 border rounded">
     <button onclick="login()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Login</button>
+  -->
+      <h2 class="text-xl font-semibold mt-6 mb-2">Create Post</h2>
+      <input
+        id="title"
+        type="text"
+        placeholder="Post Title"
+        class="w-full mb-2 px-3 py-2 border rounded"
+      />
 
-    <h2 class="text-xl font-semibold mt-6 mb-2">Create Post</h2>
-    <input id="title" type="text" placeholder="Post Title" class="w-full mb-2 px-3 py-2 border rounded">
-    <textarea id="content" placeholder="Post Content" class="w-full mb-4 px-3 py-2 border rounded"></textarea>
-    <button onclick="createPost()" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Create Post</button>
-  </div>
+      <!-- Slug -->
+      <input
+        id="slug"
+        type="text"
+        placeholder="Slug (ex: post-titre)"
+        class="w-full mb-2 px-3 py-2 border rounded"
+      />
 
-  <script src="blog.js"></script>
-</body>
+      <!-- Published (checkbox ou select) -->
+      <label class="flex items-center mb-2">
+        <input id="published" type="checkbox" class="mr-2" />
+        Publier ?
+      </label>
+
+      <!-- Content -->
+      <textarea
+        id="content"
+        placeholder="Post Content"
+        class="w-full mb-4 px-3 py-2 border rounded"
+      ></textarea>
+
+      <!-- Author (ID attendu) -->
+      <input
+        id="author"
+        type="number"
+        placeholder="Author ID"
+        class="w-full mb-2 px-3 py-2 border rounded"
+      />
+
+      <!-- Category (ID attendu aussi) -->
+      <input
+        id="category"
+        type="number"
+        placeholder="Category ID"
+        class="w-full mb-4 px-3 py-2 border rounded"
+      />
+
+      <button
+        onclick="loginAndCreatePost()"
+        class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+      >
+        Create Post
+      </button>
+    </div>
+
+    <script src="blog.js"></script>
+  </body>
 </html>
